@@ -1,6 +1,6 @@
-import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import React from 'react';
 
 export default {
   title: 'LinearGradient',

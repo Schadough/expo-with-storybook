@@ -1,6 +1,6 @@
-import React from "react";
 import { action } from "@storybook/addon-actions";
 import { storiesOf } from "@storybook/react-native";
+import React from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";
 
@@ -29,7 +29,8 @@ export default {
 };
 
 export const styledComponent = () => (
-  <View style={{ flexDirection: "row" }}>
+  // make this view a view container in tools
+  <View style={{ flexDirection: "row", justifyContent: "center", alignItems: "center", backgroundColor: "purple", height: 700}}>
     <StyledButton color="blue" onPress={action("clicked")}>
       <StyledText>Hello Button</StyledText>
     </StyledButton>
