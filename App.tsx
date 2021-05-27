@@ -1,13 +1,20 @@
-import { configure, getStorybookUI } from "@storybook/react-native";
+import React from "react";
+import {
+  SafeAreaView,
+  Text,
+} from "react-native";
+import { __STORYBOOK__ } from "./config";
+import Storybook from "./stories/Storybook";
 
-configure(() => {
-  // Since require.context doesn't exist in metro bundler world, we have to
-  // manually import files ending in *.stories.js
-  require("./stories");
-}, module);
+const App = ({}) => {
 
-export default getStorybookUI({
-  // Pass AsyncStorage below if you want Storybook to open your
-  // last visited story after you close and re-open your app
-  asyncStorage: null,
-});
+  // Development Environment for Storybook
+  return __STORYBOOK__ ? <Storybook />
+  : (
+    <SafeAreaView>
+      <Text>Hello From App</Text>
+    </SafeAreaView>
+  )
+};
+
+export default App;
